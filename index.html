@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Form</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="js/jquery-3.2.0.min.js"></script>
+  </head>
+  <body style="background: url(image/background_image.jpg) no-repeat center center fixed;
+  background-size: 100% 100%; ">
+      <h1></h1>
+  <section id="form_before_lounch">
+           <p>Log In</p>
+      <form  id="form" method="post" onsubmit="return false">
+         <div>
+             <div>
+               <input type="email" id="email" placeholder="enter your email">
+             </div>
+             <div>
+               <input type="password" id="password" placeholder="enter your password">
+             </div>
+             <div id="btn">
+               <input type="submit" id="submit" value="Log In">
+             </div>
+         </div>
+     </form>
+  </section>
+  <section id="form_before_lounch_signup">
+           <p>Sign Up</p>
+      <form  id="sign_form" method="post" onsubmit="return false">
+         <div>
+             <div>
+               <input type="text" id="full_name" placeholder="enter your Full Name">
+             </div>
+             <div>
+               <input type="email" id="email" placeholder="enter your email">
+             </div>
+             <div>
+               <input type="password" id="password" placeholder="enter your password">
+             </div>
+             <div>
+               <input type="password" id="retype_password" placeholder="enter your password again">
+             </div>
+             <div>
+               <input type="checkbox" id="checkbox" >confirm me
+             </div>
+             <div id="btn">
+               <input type="submit" id="submit" value="signup">
+             </div>
+         </div>
+     </form>
+  </section>
+
+   
+<script type="text/javascript">
+   $(document).ready(function(){
+    
+  $("#form_before_lounch").click(function(){
+   $(this).animate({height:"280px",width:"420px"});
+    $(this).children("p").animate({fontSize:"25px"});
+
+  $("#form").delay(500).fadeIn();
+  })
+  $("#submit").click(function(){
+    var u_name = $("#username").val();
+   var pass = $("#password").val();   
+   if(u_name !="" && pass !=""){
+    $("#form_before_lounch").fadeOut();
+    $("h1").fadeIn();
+    $("h1").html("Welcome"+u_name);
+    $("h1").animate({marginTop:"200px"}); 
+     };
+   })
+ })
+
+   $(document).ready(function(){   
+  $("#form_before_lounch_signup").click(function(){
+   $(this).animate({height:"280px",width:"420px"});
+    $(this).children("p").animate({fontSize:"25px"});
+  $("#sign_form").delay(500).fadeIn();
+  })
+  $("#submit").click(function(){
+    var u_name = $("#username").val();
+    var email = $("#email").val();
+   var pass = $("#password").val();
+   var retype_password = $("#retype_password").val(); 
+   var checkbox = $("#checkbox").val(); 
+   if(u_name !="" && email !="" && pass !="" && retype_password !="" && checkbox !="" ){
+    $("#form_before_lounch").fadeOut();
+    $("h1").fadeIn();
+    $("h1").html("Welcome"+u_name);
+    $("h1").animate({marginTop:"200px"}); 
+     };
+    
+})
+   })
+
+
+
+
+
+   </script>
+  
+  
+  </body>
+</html>
